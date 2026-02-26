@@ -6,9 +6,9 @@
 :root {
     --btn-dark: #110f30;
     --btn-btn: #243966;
-    --calculator: #3b4454;
+    --calculator: #313947;
     --button: #3b4454;
-    --display: #3b4454; 
+    --display: var(--calculator); 
     --shadow: #ffffff10 -6px -4px 12px;
     --shadow-operator: #ffffff2a -6px -4px 12px;
 }
