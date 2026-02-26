@@ -76,8 +76,7 @@ body {
 
     border-radius: 0.5rem;
     font-size: 2rem;
-
-    min-width: 0;
+    
     aspect-ratio: 1/1;
 }
 #equal {
