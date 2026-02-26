@@ -15,6 +15,10 @@ buttons.addEventListener("click", (e) => {
         calculate();
     }
 
+    if (action === "backspace") {
+        backspace();
+    }
+
     if (value) {
         appendValue(value);
     }
@@ -30,4 +34,8 @@ function clearDisplay() {
 
 function calculate() {
     display.value = eval(display.value);
+}
+
+function backspace() {
+    display.value = display.value.slice(0, -1)
 }
