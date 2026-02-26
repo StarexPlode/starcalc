@@ -12,6 +12,7 @@ buttons.addEventListener("click", (e) => {
     }
 
     if (action === "equals") {
+        if (display.value === "") return;
         calculate();
     }
 
