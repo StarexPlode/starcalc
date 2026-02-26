@@ -12,14 +12,20 @@ body {
     background-color: yellow;
 }
 body a {
+    flex-shrink: 1;
     border: 2px solid black;
-    padding: 6rem;
+    padding: 2rem;
     border-radius: 0.5rem;
 
     font-size: 4rem;
+    text-align: center;
     text-decoration: none;
     background-color: green;
     color: yellow;
+
+    margin: 10px;
+    width: 90%;
+    max-width: 400px;
 
     font-weight: bold;
 }
