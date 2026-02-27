@@ -20,7 +20,6 @@ body {
 
     margin: 1rem;
 
-    
     border-radius: 0.5rem;
 
     background-color: var(--calculator);
@@ -79,10 +78,7 @@ body {
 }
 .buttons button:active {
   transform: translateY(2px);
-  box-shadow:
-    inset 3px 3px 8px rgba(0,0,0,0.4),
-    inset -2px -2px 5px rgba(255,255,255,0.05);
-
+  box-shadow: var(--shadow-active);
 }
 #equal {
     grid-column: span 2;

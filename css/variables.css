@@ -5,6 +5,7 @@
   --btn-btn: #243966;
 
   --button: #3A4154;
+  --button-hover: #464c61;
   --button-operator: #7C5CFF;
   --button-operator-hover: #9276FF;
   --button-equal: #9B6BFF;
@@ -14,6 +15,8 @@
   -3px -3px 6px rgba(255,255,255,0.05);
     --shadow-operator: 6px 6px 14px rgba(0,0,0,0.4),
   inset 0 1px 0 rgba(255,255,255,0.2);
+  --shadow-active:   inset 3px 3px 8px rgba(0,0,0,0.4),
+    inset -2px -2px 5px rgba(255,255,255,0.05);
 
   --text-primary: #E8EBFF;
   --text-secondary: #A9B0D6;

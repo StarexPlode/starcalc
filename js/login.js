@@ -1,35 +1,39 @@
-const form = document.querySelector(".form");
-const id = document.querySelector("#id");
-const pass = document.querySelector("#password");
+const buttons = document.querySelector(".buttons");
+const display = document.querySelector("#display");
 
-const correctId = "admin";
-const correctPass = "1234";
+const passcode = "1234";
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault()
-    
-    const enteredId = id.value.trim();
-    const enteredPass = pass.value.trim();
-    
-    if (enteredId === correctId && enteredPass === correctPass) {
-        window.location.href = "calculator.html";
-    } else {
-        errorDisplay();
+buttons.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+
+    const value = btn.dataset.value;
+    const action = btn.dataset.action;
+
+    if (value) {
+        appendValue(value);
+    }
+    if (action) {
+        doAction(action);
     }
 })
+function appendValue(value) {
+    display.value += value
+    checkPasscode();
+}
 
-function errorDisplay() {
-        id.type = "text";
-        id.value = "Error";
+function checkPasscode() {
+    if (display.value === passcode) {
+        window.location.href = "calculator.html";
+        doAction("clear");
+    }
+}
+function doAction(action) {
+    if (action === "clear") {
+        display.value = ""
+    }
 
-        pass.type = "text";
-        pass.value = "Error"
-
-        setTimeout(() => {
-            id.value = "";
-            pass.value = "";
-
-            id.type = "password";
-            pass.type = "password";
-        }, 1000)
+    if (action === "backspace") {
+        display.value = display.value.slice(0, -1);
+    }
 }
