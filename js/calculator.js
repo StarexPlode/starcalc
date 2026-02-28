@@ -1,9 +1,9 @@
-const display = document.querySelector("#display")
-const buttons = document.querySelector(".buttons")
-
 if (sessionStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 }
+const display = document.querySelector("#display")
+const buttons = document.querySelector(".buttons")
+
 
 buttons.addEventListener("click", (e) => {
     const btn = e.target.closest("button")
