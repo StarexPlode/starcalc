@@ -24,6 +24,7 @@ function appendValue(value) {
 
 function checkPasscode() {
     if (display.value === passcode) {
+        sessionStorage.setItem("isLoggedIn", "true");
         window.location.href = "calculator.html";
         doAction("clear");
     }

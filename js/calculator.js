@@ -1,6 +1,10 @@
 const display = document.querySelector("#display")
 const buttons = document.querySelector(".buttons")
 
+if (sessionStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "index.html"
+}
+
 buttons.addEventListener("click", (e) => {
     const btn = e.target.closest("button")
 
