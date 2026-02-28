@@ -17,7 +17,13 @@ buttons.addEventListener("click", (e) => {
         doAction(action);
     }
 })
+
+let mode = "input";
+
 function appendValue(value) {
+
+    if (mode === "error") return;
+
     display.value += value;
     checkPasscode();
 }
@@ -44,8 +50,10 @@ function showError() {
     if (display.value.length === passcode.length && display.value !== passcode) {
         doAction("clear");
         appendValue("Wrong Passcode!");
+        mode = "error";
         setTimeout(() => {
             doAction("clear")
+            mode = "input";
         }, 2000)
     }
 }
