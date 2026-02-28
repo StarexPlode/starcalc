@@ -41,7 +41,7 @@ function checkPasscode() {
     if (display.value.length !== passcode.length) return;
 
     if (display.value === passcode) {
-        doAction("clear");
+        display.value = ""
         sessionStorage.setItem("isLoggedIn", "true")
         window.location.href = "calculator.html";
     }
