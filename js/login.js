@@ -18,7 +18,7 @@ buttons.addEventListener("click", (e) => {
     }
 })
 function appendValue(value) {
-    display.value += value
+    display.value += value;
     checkPasscode();
 }
 
@@ -28,6 +28,7 @@ function checkPasscode() {
         window.location.href = "calculator.html";
         doAction("clear");
     }
+    else showError();
 }
 function doAction(action) {
     if (action === "clear") {
@@ -36,5 +37,15 @@ function doAction(action) {
 
     if (action === "backspace") {
         display.value = display.value.slice(0, -1);
+    }
+}
+
+function showError() {
+    if (display.value.length === passcode.length && display.value !== passcode) {
+        doAction("clear");
+        appendValue("Wrong Passcode!");
+        setTimeout(() => {
+            doAction("clear")
+        }, 2000)
     }
 }
