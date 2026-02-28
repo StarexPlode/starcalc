@@ -1,5 +1,5 @@
-const buttons = document.querySelector(".buttons");
-const display = document.querySelector("#display");
+const display = document.querySelector("#display")
+const buttons = document.querySelector(".buttons")
 
 const passcode = "1234";
 
@@ -11,49 +11,48 @@ buttons.addEventListener("click", (e) => {
     const action = btn.dataset.action;
 
     if (value) {
-        appendValue(value);
+        insertValue(value);
     }
     if (action) {
         doAction(action);
     }
+
+    checkPasscode()
 })
 
-let mode = "input";
+let displayMode = "input"
 
-function appendValue(value) {
-
-    if (mode === "error") return;
+function insertValue(value) {
+    if (displayMode === "error") return;
 
     display.value += value;
-    checkPasscode();
-}
-
-function checkPasscode() {
-    if (display.value === passcode) {
-        sessionStorage.setItem("isLoggedIn", "true");
-        window.location.href = "calculator.html";
-        doAction("clear");
-    }
-    else showError();
 }
 function doAction(action) {
+    if (displayMode === "error") return;
+
     if (action === "clear") {
         display.value = ""
     }
-
     if (action === "backspace") {
-        display.value = display.value.slice(0, -1);
+        display.value = display.value.slice(0, -1)
     }
 }
+function checkPasscode() {
+    if (display.value.length !== passcode.length) return;
 
-function showError() {
-    if (display.value.length === passcode.length && display.value !== passcode) {
+    if (display.value === passcode) {
         doAction("clear");
-        appendValue("Wrong Passcode!");
-        mode = "error";
+        window.location.href = "calculator.html";
+    }
+
+    else if (display.value !== passcode) {
+        doAction("clear");
+        display.value = "";
+        displayMode = "error";
+
         setTimeout(() => {
-            doAction("clear")
-            mode = "input";
+            display.value = "";
+            displayMode = "input"
         }, 2000)
     }
 }
