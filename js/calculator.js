@@ -2,7 +2,7 @@ const display = document.querySelector("#display")
 const buttons = document.querySelector(".buttons")
 
 if (sessionStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "index.html"
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 }
 
 buttons.addEventListener("click", (e) => {
