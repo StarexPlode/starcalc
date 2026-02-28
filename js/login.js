@@ -46,7 +46,6 @@ function checkPasscode() {
     }
 
     else if (display.value !== passcode) {
-        doAction("clear");
         display.value = "Wrong Passcode!";
         displayMode = "error";
 
