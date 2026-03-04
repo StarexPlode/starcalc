@@ -7,6 +7,7 @@ const buttons = document.querySelector(".buttons")
 
 buttons.addEventListener("click", (e) => {
     const btn = e.target.closest("button")
+    if (!btn) return;
 
     const value = btn.dataset.value;
     const action = btn.dataset.action;
